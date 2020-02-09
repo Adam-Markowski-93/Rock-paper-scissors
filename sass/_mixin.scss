@@ -1,0 +1,15 @@
+//Mixin with all need breakpoints (in SCSS file I used some another breakpoints).
+
+@mixin mq ($breakpoint) {
+    $size: map-get($breakpoints, $breakpoint);
+
+    @if($size) {
+        @media #{$size} {
+            @content;
+        }
+    }
+
+    @else {
+        @error '"#{$breakpoint}" - nie ma takiej wielkości'
+    }
+}

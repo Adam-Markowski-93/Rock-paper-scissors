@@ -1,0 +1,20 @@
+/* Coolors Exported Palette - coolors.co/d3d4d9-5299d3-bb0a21-083d77-042a2b */
+
+/* RGB */
+$backgroundColor: rgba(211, 212, 217, 1);
+$backColor: rgba(82, 153, 211, 1);
+$transColor: rgba(187, 10, 33, 1);
+$buttonColor: rgba(8, 61, 119, 1);
+$borderColor: rgba(4, 42, 43, 1);
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap&subset=latin-ext');
+
+$mainFont: 'Source Sans Pro',
+sans-serif;
+
+$breakpoints: (very-small: (max-width: 360px),
+    small: (max-width: 460px),
+    medium: (max-width: 760px),
+    large: (max-width: 1024px),
+    very-large: (max-width: 1200px),
+);

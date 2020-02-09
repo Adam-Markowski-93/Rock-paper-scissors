@@ -1,0 +1,429 @@
+@import 'variables';
+@import 'mixin';
+
+
+// Normalize
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $mainFont;
+}
+
+html {
+    margin: 8px;
+}
+
+// All page components are positioning with flexbox.
+// I tried to build every selector based on BEM methodology.
+
+.page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1024px;
+    margin: 0 auto;
+    border-radius: 20px;
+
+    @media (max-width: 1400px) and (orientation: landscape) {
+        max-width: 1350px;
+    }
+
+    @media (max-width: 1024px) and (orientation: landscape) {
+        max-width: 1024px;
+        margin-top: 5px;
+    }
+
+}
+
+.header {
+    flex-basis: 100%;
+    height: 80px;
+    background-color: $backColor;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mq(very-small) {
+        height: 40px;
+    }
+
+    @media (max-width: 860px) and (orientation: landscape) {
+        height: 40px;
+    }
+
+    &__h1 {
+        font-size: 40px;
+
+        @include mq(small) {
+            font-size: 25px;
+        }
+
+        @include mq(very-small) {
+            font-size: 18px;
+        }
+
+        @media (max-width: 860px) and (orientation: landscape) {
+            font-size: 30px;
+        }
+    }
+
+    &__icon {
+        font-size: 50px;
+        margin-left: 10px;
+
+        @include mq(small) {
+            font-size: 40px;
+        }
+
+        @include mq(very-small) {
+            font-size: 25px;
+        }
+
+        @media (max-width: 1024px) and (orientation: landscape) {
+            font-size: 38px;
+        }
+    }
+}
+
+// Component presenting computer and player selection
+.main {
+    flex-basis: 100%;
+    height: 50vh;
+
+    display: flex;
+    justify-content: space-between;
+
+    @include mq(small) {
+        flex-direction: column;
+    }
+
+    @media (max-width: 860px) and (orientation: landscape) {
+        height: 40vh;
+    }
+
+    &__player {
+        flex-basis: 40%;
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    &__live {
+        flex-basis: 15%;
+        text-align: center;
+        font-size: 20px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include mq (large) {
+            font-size: 25px;
+        }
+
+        @include mq(very-small) {
+            font-size: 15px;
+        }
+
+        @media (max-width: 1400px) and (orientation: landscape) {
+            font-size: 30px;
+        }
+
+        @media (max-width: 860px) and (orientation: landscape) {
+            font-size: 20px;
+        }
+    }
+
+    &__ai {
+        flex-basis: 40%;
+
+        justify-content: center;
+        align-items: center;
+
+        &-chooice-image {
+            border-radius: 50%;
+            border: 2px solid $borderColor;
+            width: 30vh;
+            height: 30vh;
+
+            @include mq(large) {
+                height: 25vh;
+                width: 25vh;
+            }
+
+            @include mq(small) {
+                height: 17vh;
+                width: 17vh;
+            }
+
+            @media (max-width: 1400px) and (orientation: landscape) {
+                height: 35vh;
+                width: 35vh;
+            }
+
+            @media (max-width: 860px) and (orientation: landscape) {
+                height: 25vh;
+                width: 25vh;
+            }
+        }
+    }
+
+    &__player-choose {
+        flex-basis: 70%;
+
+        @include mq(small) {
+            flex-basis: 1%;
+        }
+    }
+
+    &__player-options {
+        flex-grow: 1;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    &__options {
+        height: 10vh;
+        width: 10vh;
+        border-radius: 50%;
+        border: 2px solid $borderColor;
+        transition: 0.2s;
+
+        @include mq(large) {
+            height: 8vh;
+            width: 8vh;
+        }
+
+        @media (max-width: 860px) and (orientation: landscape) {
+            height: 15vh;
+            width: 15vh;
+        }
+
+        //Modifier
+
+        &--active {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            width: 30vh;
+            height: 30vh;
+
+            @include mq(large) {
+                height: 25vh;
+                width: 25vh;
+            }
+
+            @include mq(small) {
+                height: 15vh;
+                width: 15vh;
+            }
+
+            @media (max-width: 1400px) and (orientation: landscape) {
+                height: 35vh;
+                width: 35vh;
+            }
+
+            @media (max-width: 860px) and (orientation: landscape) {
+                height: 25vh;
+                width: 25vh;
+            }
+        }
+    }
+}
+
+.div-game-place {
+    display: flex;
+    flex-direction: column;
+    background-color: $backColor;
+    border-radius: 20px;
+    margin: 10px 0;
+}
+
+//Element of HTML structure but with description of button style (reusable). 
+
+.button {
+    flex-basis: 100%;
+    height: 50px;
+    text-align: center;
+
+
+    @include mq(large) {
+        height: 60px;
+    }
+
+    @include mq(very-small) {
+        height: 40px;
+    }
+
+    @media (max-width: 1400px) and (orientation: landscape) {
+        height: 90px;
+    }
+
+    @media (max-width: 1024px) and (orientation: landscape) {
+        height: 60px;
+    }
+
+    @media (max-width: 860px) and (orientation: landscape) {
+        height: 40px;
+    }
+
+    @media (max-width: 700px) and (orientation: landscape) {
+        height: 30px;
+    }
+
+
+    &__button {
+        height: 45px;
+        width: 125px;
+        font-size: 20px;
+        border-radius: 20px;
+        background-color: $transColor;
+        color: white;
+        border-style: none;
+        text-transform: uppercase;
+        transition: 0.2s;
+
+        @include mq(large) {
+            height: 60px;
+            width: 150px;
+            font-size: 23px;
+        }
+
+        @include mq(very-small) {
+            height: 40px;
+            font-size: 15px;
+        }
+
+        @media (max-width: 1400px) and (orientation: landscape) {
+            height: 90px;
+            width: 200px;
+            font-size: 35px;
+        }
+
+        @media (max-width: 1024px) and (orientation: landscape) {
+            height: 60px;
+            font-size: 30px;
+        }
+
+        @media (max-width: 860px) and (orientation: landscape) {
+            height: 40px;
+            width: 175px;
+            font-size: 25px;
+        }
+
+        @media (max-width: 700px) and (orientation: landscape) {
+            height: 30px;
+            width: 140px;
+            font-size: 20px;
+        }
+    }
+}
+
+.results {
+    flex-basis: 100%;
+    height: 10vh;
+    margin: 10px 0;
+
+    display: flex;
+    justify-content: space-between;
+
+    @include mq(large) {
+        margin: 20px 0;
+        height: 7vh;
+    }
+
+    @include mq(small) {
+        height: 8vh;
+    }
+
+    @media (max-width: 860px) and (orientation: landscape) {
+        height: 10vh;
+        margin: 10px auto 5px auto;
+    }
+}
+
+
+.result-div {
+    flex-basis: 30%;
+    background-color: $buttonColor;
+    border-radius: 20px;
+    color: white;
+    font-size: 18px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    @include mq(large) {
+        font-size: 22px;
+    }
+
+    @include mq(small) {
+        font-size: 18px;
+    }
+
+    @include mq(very-small) {
+        font-size: 14px;
+    }
+
+    @media (max-width: 1400px) and (orientation: landscape) {
+        font-size: 30px;
+    }
+
+    @media (max-width: 1024px) and (orientation: landscape) {
+        font-size: 20px;
+    }
+
+    @media (max-width: 860px) and (orientation: landscape) {
+        font-size: 15px;
+    }
+}
+
+
+.statistics {
+    flex-basis: 100%;
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &--p {
+        font-size: 20px;
+
+        @include mq(large) {
+            font-size: 25px;
+        }
+
+        @include mq(very-small) {
+            font-size: 18px;
+        }
+
+        @media (max-width: 1400px) and (orientation: landscape) {
+            font-size: 30px;
+        }
+
+        @media (max-width: 1024px) and (orientation: landscape) {
+            font-size: 20px;
+        }
+
+        @media (max-width: 860px) and (orientation: landscape) {
+            font-size: 15px;
+        }
+    }
+
+    &__span {
+        font-weight: bold;
+    }
+}

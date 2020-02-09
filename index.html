@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Papier, kamień, nożyce</title>
+    <script src="https://kit.fontawesome.com/e09377e254.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="page">
+        <header class="header">
+            <h1 class="header__h1">Papier, kamień, nożyce !</h1>
+            <i class="header__icon fas fa-hand-scissors"></i>
+
+        </header>
+        <main class="main">
+            <div class="main__player div-game-place">
+                <div class="main__player-choose">
+                </div>
+                <div class="main__player-options">
+                    <img src="img/papier.jpg" alt="" data-option="papier" class="main__options">
+                    <img src="img/kamien.jpg" alt="" data-option="kamień" class="main__options">
+                    <img src="img/nozyczki.jpg" alt="" data-option="nożyczki" class="main__options">
+                </div>
+            </div>
+            <div class="main__live">Pozostało żyć: <span class="main__live-amount">0</span></div>
+            <div class="main__ai div-game-place">
+                <img class="main__ai-chooice-image" src="" alt="">
+            </div>
+        </main>
+        <section class="button">
+            <button class="button__button">Let`s play!</button>
+        </section>
+        <section class="results">
+            <div class="result-div results__player">Twój wybór:<span class="results__span-player"></span></div>
+            <div class="result-div result__ai"> Wybór AI:<span class="results__span-ai"></span></div>
+            <div class="result-div result__game-result">Rezultat: <span class="results__span-result"></span> </div>
+        </section>
+        <section class="statistics">
+            <p class="statistics__games statistics--p">Liczba rozegranych gier: <span class="statistics__span-games"
+                    data-stats="games">0</span></p>
+            <p class="statistics__wins statistics--p">Wygrane: <span class="statistics__span-wins"
+                    data-stats="wins">0</span>
+            </p>
+            <p class="statistics__draws statistics--p">Remisy: <span class="statistics__span-draws"
+                    data-stats="draws">0</span>
+            </p>
+            <p class="statistics__losses statistics--p">Przegrane: <span class="statistics__span-losses"
+                    data-stats="losses">0</span></p>
+        </section>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
